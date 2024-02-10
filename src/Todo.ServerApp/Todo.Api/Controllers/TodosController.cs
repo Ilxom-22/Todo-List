@@ -17,7 +17,7 @@ public class TodosController(ITodoService todoService, IMapper mapper) : Control
         /*var result = await todoService.GetAsync();
         return result.Any() ? Ok(mapper.Map<IEnumerable<TodoDto>>(result)) : NoContent();*/
 
-        return new(Ok("Redeployed"));
+        return new(Ok("Checking"));
     }
 
     [HttpGet("{todoId:guid}")]
