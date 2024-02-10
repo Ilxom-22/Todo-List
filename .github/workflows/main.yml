@@ -4,11 +4,11 @@ on:
   push:
     branches: ["main"]
     paths:
-      - './src/Todo.ServerApp/**'
+      - 'src/Todo.ServerApp/**'
   pull_request: 
     branches: ["main"]
     paths:
-        - './src/Todo.ServerApp/**'
+        - 'src/Todo.ServerApp/**'
   workflow_dispatch:
 
 env:
