@@ -12,12 +12,10 @@ namespace Todo.Api.Controllers;
 public class TodosController(ITodoService todoService, IMapper mapper) : ControllerBase
 {
     [HttpGet]
-    public ValueTask<IActionResult> Get()
+    public async ValueTask<IActionResult> Get()
     {
-        /*var result = await todoService.GetAsync();
-        return result.Any() ? Ok(mapper.Map<IEnumerable<TodoDto>>(result)) : NoContent();*/
-
-        return new(Ok("Deployed"));
+        var result = await todoService.GetAsync();
+        return result.Any() ? Ok(mapper.Map<IEnumerable<TodoDto>>(result)) : NoContent();
     }
 
     [HttpGet("{todoId:guid}")]
